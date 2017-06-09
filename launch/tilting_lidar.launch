@@ -14,13 +14,13 @@
            baud_rate: 1000000
            min_motor_id: 1
            max_motor_id: 2
-           update_rate: 20
+           update_rate: 60
      </rosparam>
 
    </node>
 
    <rosparam
-      file="$(find tilter)/launch/dynamixel_servos_tilting.yaml"
+      file="$(find tilting_lidar_clean)/launch/dynamixel_servos_tilting.yaml"
       command="load"
     />
 
@@ -36,15 +36,15 @@
    />
 
   <node
-    name="tilter"    
-    pkg="tilter"
-    type="tilter"
+    name="tilt_motor"    
+    pkg="tilting_lidar_clean"
+    type="tilt_motor"
     output="screen"
    />
 
   <node
     name="tilt_transform"
-    pkg="tilter"
+    pkg="tilting_lidar_clean"
     type="tilt_transform"
     output="screen"
   />
@@ -60,6 +60,7 @@
     pkg="rviz"
     type="rviz"
     name="rviz"
+    args="-d $(find tilting_lidar_clean)/rviz_cfg/tilting_lidar.rviz"/>
    />
 
   <node

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>tilter</name>
+  <name>tilting_lidar_clean</name>
   <version>0.0.0</version>
-  <description>The tilter package</description>
+  <description>The cleaned up tilter package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->

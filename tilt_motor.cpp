@@ -42,9 +42,8 @@ void Dynamixel::moveMotor(double position) {
 //ensures proper alignment
 void Dynamixel::checkError() {
     ros::spinOnce();
-    ROS_ERROR_STREAM(error);
-    while((abs (error))>0.02) {
-    ros::Duration(.1).sleep();
+    while((abs (error))>0.05) {
+//    ros::Duration(.07).sleep();
 //  ros::Subscriber sub=nh.subscribe("/tilt_controller/state", 5, &obtainValues); //checks error
     ros::spinOnce();
     }
@@ -63,12 +62,21 @@ int main(int argc, char **argv) {
     double pause;
 
     //initialize subscription
-    ros::Subscriber sub=nh.subscribe("/tilt_controller/state", 5, &obtainValues); //checks error
+    ros::Subscriber sub=nh.subscribe("/tilt_controller/state", 1, &obtainValues); //checks error
 
     //intitialize parameters
-    nh.param("maximum", max, 90);
-    nh.param("minimum", min, -90);
-    nh.param("pause", pause, 0.1);
+    nh.param("maximum", max, 92);
+    nh.param("minimum", min, -92);
+    nh.param("pause", pause, 0.03);
+
+    //Wait for servo init
+    ros::topic::waitForMessage<dynamixel_msgs::JointState>("/tilt_controller/state", ros::Duration(20));
+
+//    motor.moveMotor(0);
+//    ros::Duration(pause).sleep();
+//    motor.checkError();
+//   ros::Duration(pause).sleep();
+
 
     while(ros::ok()) {
 
@@ -81,7 +89,5 @@ int main(int argc, char **argv) {
 	ros::Duration(pause).sleep();
         motor.checkError();
         ros::Duration(pause).sleep();
-  
-
     }
 }

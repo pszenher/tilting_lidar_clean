@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(tilter)
+project(tilting_lidar_clean)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
 # add_definitions(-std=c++11)
@@ -105,9 +105,9 @@ catkin_package(
 #  DEPENDS system_lib
 )
 include_directories(include ${catkin_INCLUDE_DIRS})
-add_executable(tilter tilting.cpp)
+add_executable(tilt_motor tilt_motor.cpp)
 add_executable(tilt_transform tilt_transform.cpp)
-target_link_libraries(tilter ${catkin_LIBRARIES})
+target_link_libraries(tilt_motor ${catkin_LIBRARIES})
 target_link_libraries(tilt_transform ${catkin_LIBRARIES})
 ###########
 ## Build ##
