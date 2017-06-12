@@ -18,7 +18,7 @@ void transform() {
     tf::Quaternion q;
     q.setRPY(pos, 0, 0);
     transform.setRotation(q);
-    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", "laser"));
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "camera", "laser"));
 }
 
 

@@ -83,8 +83,8 @@ Visualization Manager:
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 4.37502
-        Min Value: -1.34061
+        Max Value: 2.611
+        Min Value: -0.226084
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -113,7 +113,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: world
+    Fixed Frame: camera
     Frame Rate: 30
   Name: root
   Tools:
@@ -146,10 +146,10 @@ Visualization Manager:
         Z: 0
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.365398
+      Pitch: 0.330398
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.520399
+      Yaw: 4.0404
     Saved: ~
 Window Geometry:
   Displays:
@@ -168,4 +168,4 @@ Window Geometry:
     collapsed: false
   Width: 1200
   X: 347
-  Y: 44
+  Y: 36
